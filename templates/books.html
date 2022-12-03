@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE HTML>
+
+<html>
+	<style>
+		.lib{
+			color: black;
+		}
+		input[type=date],input[type=number] {
+			background-color: white;
+			color: black;
+			display: block;
+		
+			
+			
+			
+			
+		  }
+	</style>
+	<head>
+		<title>library fine reminder</title>
+		<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}">
+	<link rel="manifest" href="images/site.webmanifest">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static '/css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static '/css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<!-- <div id="page-wrapper" style="background-image: url('https://images.unsplash.com/photo-1419640303358-44f0d27f48e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1085&https://images.unsplash.com/photo-1419640303358-44f0d27f48e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1085&q=80=80');"> -->
+				<div id="page-wrapper" style="background-image:url('https://images.unsplash.com/photo-1419640303358-44f0d27f48e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1985&q=80')">
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">library fine reminder</a></h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+                      <li><a href="{% url 'books' %}">add book</a></li>
+                      <li><a href="{% url 'index' %}">logout</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<article id="main">
+						<header>
+							<h2>add book</h2>
+						</header>
+						<section class="wrapper style5">
+									<form method="post" action="books">
+										{% csrf_token %}
+										<div class="row gtr-uniform">
+											<div class="col-12">
+												<input type="text" name="username" id="username" value="" placeholder="username" required/>
+											</div>
+                    						  <div class="col-12">
+												<input type="text" name="libraryId" id="libraryId" value="" placeholder="libraray id" required/>
+											</div>
+                     						 <div class="col-12">
+												<input type="text" name="bookTitle" id="bookTitle" value="" placeholder="book title" required/>
+											</div>
+											
+											<ul style = "list-style-type: none";>
+												<li>
+											<div class="lib" >
+												<label for="dateOut">Date Out:</label>
+												<input type="date" name="dateOut" id="dateOut" value="" placeholder="" required/>
+											</div>
+											<br>
+										</li>
+										    <li>
+											<div class="lib" >
+												<label for="dueDate">Due Date:</label>
+												<input type="date" name="dueDate" id="dueDate" value="" placeholder="" required/>
+												<br>
+											</div>
+										</li>
+											<li>
+												<br>
+                      						<div class="lib">
+												  
+												<input type="number" name="due" id="due" value="" placeholder="per day due rate" required/>
+											</div>
+										</li>
+										</ul>
+											<div class="col-12">
+												<ul class="actions">
+													<li><input type="submit" value="add book" class="primary" /></li>
+												</ul>
+											</div>
+										</div>
+									</form>
+						</section>
+					</article>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static '/js/jquery.min.js' %}"></script>
+			<script src="{% static '/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static '/js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static '/js/browser.min.js' %}"></script>
+			<script src="{% static '/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'js/util.js' %}"></script>
+			<script src="{% static '/js/main.js' %}"></script>
+
+	</body>
+</html>
